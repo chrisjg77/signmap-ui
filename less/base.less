@@ -23,8 +23,13 @@ main {
 }
 
 header { 
-  height: 150px;
-  position: relative;
+  position: fixed;
+  height: 190px;
+  margin-bottom: -4px;
+  border-bottom: 8px solid rgba(255,255,255,0.2);
+  width: 100%;
+  z-index: 998;
+  background: #fff;
   // margin-top: -150px;
   .transition(top,0.375s,4s);
 }
@@ -44,7 +49,15 @@ h1 {
   font-weight: 700;
   color: #fff;
   text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
-  background: darken(@grey,10%);
-  border: 6px solid #f7f7f7;
-  padding: 20px 1em;
+  background: url('../img/banner-edge-l.png') no-repeat 1.5% top,
+              url('../img/banner-edge-r.png') no-repeat 98.5% top;
+  padding: 45px 1em;
+
+  span {
+    padding: 20px 1em;
+    background: darken(@grey,10%);
+    border: 6px solid #f7f7f7;
+    top: -23px;
+    position: relative;
+  }
 }
