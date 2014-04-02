@@ -1,0 +1,44 @@
+// Base
+// -------------------------------------------
+// Declare your base styles here. Anything that is a major component of the
+// site - think high level HTML5 semantic mark up. Or things like main 
+// navigation.
+
+
+html { 
+  height: 100%; 
+  font-family: @sans_font_stack;
+}
+body { height: 100%; }
+
+p { }
+a { }
+button { }
+
+main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .transition(top,0.375s,2s);
+}
+
+header { 
+  height: 150px;
+  position: relative;
+  // margin-top: -150px;
+  .transition(top,0.375s,4s);
+}
+
+section { }
+aside { }
+article { }
+
+input { }
+textarea { }
+input[type='submit'] { }
+
+h1 {
+  text-transform: uppercase;
+  font-size: 4em;
+  font-weight: 700;
+}

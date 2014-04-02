@@ -1,0 +1,30 @@
+// Mixins
+// -------------------------------------------
+// Mixins are the best place to handle vendor prefixes or elements that require
+// multiple lines of code for browser support. 
+
+.box-sizing(@declaration) {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.gradient(@start,@from,@to) {
+	background: -webkit-linear-gradient(@start,@from,@to); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(@start,@from,@to); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(@start,@from,@to); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(@start,@from,@to); /* Standard syntax */
+}
+
+.transition(@sel,@dur,@delay) {
+	-webkit-transition: @sel @dur;
+	-moz-transition: @sel @dur;
+	-ms-transition: @sel @dur;
+	-o-transition: @sel @dur;
+	transition: @sel @dur;
+	-webkit-transition-delay: @delay;
+	-moz-transition-delay: @delay;
+	-ms-transition-delay: @delay;
+	-o-transition-delay: @delay;
+	transition-delay: @delay;
+}
