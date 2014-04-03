@@ -1,38 +1,37 @@
 
 // Define this module and make it dependent on jquery.
 define(['jquery'],function( $ ) {
-  
-  // setTimeout(function() {
-  //   $('body').addClass('loaded');
-  // },1000);
 
+  // Instantiate variables
   var $this = $(this),
       $avatar = $('.avatar-feed li'),
       $count = $('#signerCount'),
       last = $avatar.length,
       count = 0;
 
+  // Animate count up
   var counter = setInterval(function() {
-
     count = count+25;
     $count.html(count);
-
   },25);
 
+  // Load each avatar sequentially as the count animates up
   $avatar.each(function(i) {
+    // Use delay to offset the fade on each avatar
     $(this).delay(i*25).fadeIn(100,function() {
+      // When the last avatar is reached
       if (i===last-1) {
+        // Animate in the map and layers
         setTimeout(function() {
           $('body').addClass('loaded');
         },750);
-        var header_h = $('header').height();
-        $('main').css('padding-top',header_h);
+        // Stop the counter
         clearInterval(counter);
       }
     });
-    
   });
 
+  // Keep the avatars square on window load/resize
   $(window).on('load resize',function() {
     setAvatarSquare();
   });
