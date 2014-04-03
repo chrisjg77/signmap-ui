@@ -37,6 +37,7 @@
   .main-title { margin-top: 40px; }
   .loader { height: 0; }
   .fade-onload { opacity: 0; }
+  .avatar-feed li { top: 0 !important; }
   header {
     border-bottom: 6px solid rgba(255,255,255,0.1);
     box-shadow: 0 35px 50px rgba(0,0,0,0.3);
@@ -89,6 +90,8 @@
     width: 2.5%;
     height: 45px;
     margin: 0;
+    position: relative;
+    .transition(top,0.375s,0);
     img { display: none; height: 100%; width: 100%; }
   }
 }
