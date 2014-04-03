@@ -5,6 +5,7 @@ define(['jquery'],function( $ ) {
   // Instantiate variables
   var $this = $(this),
       $avatar = $('.avatar-feed li'),
+      $img = $('.avatar-feed li img'),
       $count = $('#signerCount'),
       last = $avatar.length,
       count = 0;
@@ -17,8 +18,13 @@ define(['jquery'],function( $ ) {
 
   // Load each avatar sequentially as the count animates up
   $avatar.each(function(i) {
+
+    // Move avatar to a random position
+    var random_pos = Math.floor((Math.random()*200)+1);
+    $avatar.eq(random_pos).after($(this));
+    
     // Use delay to offset the fade on each avatar
-    $(this).delay(i*25).fadeIn(100,function() {
+    $('img',this).delay(i*25).fadeIn(100,function() {
       // When the last avatar is reached
       if (i===last-1) {
         // Animate in the map and layers
